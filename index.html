@@ -18,7 +18,7 @@
             height: 100vh;
         }
         .container {
-            max-width: 400px; /* Adjusted maximum width */
+            max-width: 80%; /* Adjusted maximum width for mobile */
             padding: 30px;
             background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
             border-radius: 10px;
@@ -29,12 +29,12 @@
             color: #333;
         }
         h1 {
-            font-size: 36px;
+            font-size: 24px; /* Reduced font size for mobile */
             margin-bottom: 20px;
             text-decoration: underline;
         }
         p {
-            font-size: 18px;
+            font-size: 16px; /* Reduced font size for mobile */
             line-height: 1.6;
             margin-bottom: 15px;
         }
@@ -44,7 +44,7 @@
         }
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 10px 20px; /* Reduced padding for mobile */
             background-color: #007bff;
             color: #fff;
             text-decoration: none;
@@ -54,6 +54,13 @@
         }
         .btn:hover {
             background-color: #0056b3;
+        }
+
+        /* Media Query for Mobile */
+        @media (max-width: 600px) {
+            .container {
+                max-width: 90%; /* Adjusted maximum width for smaller screens */
+            }
         }
     </style>
 </head>
