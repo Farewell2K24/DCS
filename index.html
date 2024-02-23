@@ -56,6 +56,12 @@
             background-color: #0056b3;
         }
 
+        #timer {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+
         /* Media Query for Mobile */
         @media (max-width: 600px) {
             .container {
@@ -70,16 +76,33 @@
         <p>Your presence would mean a great deal to us as we come together one last time to reminisce, laugh, and perhaps shed a tear or two. Let's make this farewell an unforgettable moment in our collective history.</p>
         <p>Date: 28-02-2024</p>
         <p>Time: 9:00 AM</p>
-        <p>Venue: <a href="https://maps.app.goo.gl/PeavjB3zdRZxdan17">Imperial Resort</a></p>
+        <p>Venue: <a href="http://maps.google.com/maps?saddr=(17.9704104%2C79.6202634)&daddr=Imperial%20Resort%2C%20XJ9M%2B46V%2C%20Gorrekunta%20Village%2C%20Warangal%2C%20Telangana%20506013&geocode=Feo0EgEdp-i-BA%3D%3D%3BFfkqEgEdiBq_BCkL1JmzkEUzOjH2UY0dH1XReA%3D%3D&dirflg=d">Imperial Resort</a></p>
 
         <p>Please join us to celebrate the memories and experiences we've shared.</p>
-        <button class="btn" onclick="redirectToThankYou()">Click Me to RSVP</button>
+        <button class="btn" onclick="startTimer()">Click Me to RSVP</button>
+        <div id="timer"></div>
     </div>
 
     <script>
-        function redirectToThankYou() {
-            // Redirect to the "Thank You" page
-            window.location.href = "https://th.bing.com/th/id/OIP.krHhvpXoNQaFakXT-njIjAAAAA?rs=1&pid=ImgDetMain="; // Replace with the actual URL of your thank you page
+        function startTimer() {
+            var countDownDate = new Date("Feb 28, 2024 09:00:00").getTime();
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("timer").innerHTML = "EXPIRED";
+                }
+            }, 1000);
         }
     </script>
 </body>
