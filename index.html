@@ -9,7 +9,7 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://i.pinimg.com/236x/67/19/03/671903595426494c652daa0ab157b988.jpg?nii=t '); /* Replace 'background.jpg' with the URL of your background image */
+            background-image: url('https://img.freepik.com/free-vector/mandala-illustration_53876-75291.jpg?w=1060&t=st=1708752583~exp=1708753183~hmac=0e647e827ec8ba3f38c6b4459fbcea789f74d13bced6a34f6be64fbb5068b331');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -18,9 +18,12 @@
             height: 100vh;
         }
         .container {
-            max-width: 80%; /* Adjusted maximum width for mobile */
+            max-width: 90%;
+            max-height: 90%;
             padding: 30px;
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            background-image: url('https://img.freepik.com/free-vector/elegant-abstract-gold-background-with-shiny-elements_23-2148827899.jpg?w=1060&t=st=1708752723~exp=1708753323~hmac=6021ed402b5b21c0f22a8de31f21b77517c0c239f31cf402300ae0d947fe86f0');
+            background-size: cover;
+            background-position: center;
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
@@ -29,14 +32,16 @@
             color: #333;
         }
         h1 {
-            font-size: 24px; /* Reduced font size for mobile */
+            font-size: 24px;
             margin-bottom: 20px;
             text-decoration: underline;
+            font-family: 'Great vibes',cursive ; /* Changed font family to Freebooter */
         }
         p {
-            font-size: 16px; /* Reduced font size for mobile */
+            font-size: 16px;
             line-height: 1.6;
             margin-bottom: 15px;
+            font-family: 'Great vibes',cursive ; /* Changed font family to Freebooter */
         }
         a {
             color: #007bff;
@@ -44,13 +49,14 @@
         }
         .btn {
             display: inline-block;
-            padding: 10px 20px; /* Reduced padding for mobile */
+            padding: 10px 20px;
             background-color: #007bff;
             color: #fff;
             text-decoration: none;
             border-radius: 30px;
             transition: background-color 0.3s ease;
             cursor: pointer;
+            margin-right: 10px; /* Added margin to separate buttons */
         }
         .btn:hover {
             background-color: #0056b3;
@@ -62,24 +68,34 @@
             color: #333;
         }
 
-        /* Media Query for Mobile */
         @media (max-width: 600px) {
             .container {
-                max-width: 90%; /* Adjusted maximum width for smaller screens */
+                max-width: 95%;
+                max-height: 95%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .btn {
+                padding: 8px 16px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Farewell 2k21-2k24 Invitation</h1>
+        <h1>Farewell 2021-2024 Invitation</h1>
         <p>Your presence would mean a great deal to us as we come together one last time to reminisce, laugh, and perhaps shed a tear or two. Let's make this farewell an unforgettable moment in our collective history.</p>
         <p>Date: 28-02-2024</p>
         <p>Time: 9:00 AM</p>
         <p>Venue: <a href="https://maps.app.goo.gl/dDn3h4CqF7oGQgLR7">Imperial Resort</a></p>
 
         <p>Please join us to celebrate the memories and experiences we've shared.</p>
-        <button class="btn" onclick="startTimer()">Click Me to RSVP</button>
+        <button class="btn" onclick="openMap()">click to locate</button> <!-- Added button to open map -->
         <div id="timer"></div>
     </div>
 
@@ -103,6 +119,10 @@
                     document.getElementById("timer").innerHTML = "EXPIRED";
                 }
             }, 1000);
+        }
+
+        function openMap() {
+            window.open("https://maps.app.goo.gl/dDn3h4CqF7oGQgLR7", "_blank");
         }
     </script>
 </body>
